@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.fishermen.weatherapp.controller.ProfileController">
+   <center>
+      <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+         <VBox alignment="CENTER" maxWidth="600.0" spacing="20.0" styleClass="profile-container">
+            <padding>
+               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+            
+            <!-- Header -->
+            <VBox alignment="CENTER" spacing="10.0">
+               <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/user-icon.png" />
+                  </image>
+               </ImageView>
+               <Text styleClass="title-text" text="Fisherman Profile" />
+               <Text styleClass="subtitle-text" text="Complete your profile to get personalized trip recommendations" />
+            </VBox>
+
+            <!-- Profile Form -->
+            <VBox spacing="20.0">
+               <!-- Basic Info -->
+               <GridPane hgap="15.0" vgap="10.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  </columnConstraints>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <Label text="Full Name:" styleClass="form-label" />
+                     <TextField fx:id="nameField" styleClass="form-field" />
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     <Label text="Years of Experience:" styleClass="form-label" />
+                     <ComboBox fx:id="experienceCombo" maxWidth="Infinity" styleClass="form-field">
+                        <items>
+                           <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="0-2 years" />
+                              <String fx:value="3-10 years" />
+                              <String fx:value="11-20 years" />
+                              <String fx:value="20+ years" />
+                           </FXCollections>
+                        </items>
+                     </ComboBox>
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <Label text="Boat Type:" styleClass="form-label" />
+                     <ComboBox fx:id="boatTypeCombo" maxWidth="Infinity" styleClass="form-field">
+                        <items>
+                           <FXCollections fx:factory="observableArrayList">
+                              <String fx:value="Small Boat (< 20ft)" />
+                              <String fx:value="Medium Boat (20-40ft)" />
+                              <String fx:value="Large Boat (> 40ft)" />
+                              <String fx:value="Trawler" />
+                           </FXCollections>
+                        </items>
+                     </ComboBox>
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <Label text="Boat Length (feet):" styleClass="form-label" />
+                     <TextField fx:id="boatLengthField" promptText="25" styleClass="form-field" />
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                     <Label text="Typical Crew Size:" styleClass="form-label" />
+                     <TextField fx:id="crewSizeField" promptText="3" styleClass="form-field" />
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <Label text="Fishing License Number:" styleClass="form-label" />
+                     <TextField fx:id="licenseField" promptText="FL-123456" styleClass="form-field" />
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                     <Label text="Home Port:" styleClass="form-label" />
+                     <TextField fx:id="homePortField" promptText="Miami Harbor" styleClass="form-field" />
+                  </VBox>
+                  
+                  <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <Label text="Emergency Contact:" styleClass="form-label" />
+                     <TextField fx:id="emergencyContactField" promptText="+1-555-0123" styleClass="form-field" />
+                  </VBox>
+               </GridPane>
+               
+               <!-- Specialization -->
+               <VBox spacing="5.0">
+                  <Label text="Fishing Specialization:" styleClass="form-label" />
+                  <TextArea fx:id="specializationArea" promptText="Deep sea fishing, coastal fishing, specific fish types..." 
+                           prefRowCount="3" styleClass="form-field" />
+               </VBox>
+               
+               <Button fx:id="saveButton" onAction="#handleSave" text="Save Profile &amp; Continue" 
+                       styleClass="primary-button" maxWidth="Infinity" />
+            </VBox>
+
+            <!-- Status Label -->
+            <Label fx:id="statusLabel" styleClass="status-label" visible="false" />
+         </VBox>
+      </ScrollPane>
+   </center>
+</BorderPane>
