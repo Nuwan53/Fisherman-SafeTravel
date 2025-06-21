@@ -21,6 +21,9 @@ public class SceneManager {
             Scene scene = new Scene(root);
             scene.getStylesheets().add(SceneManager.class.getResource("/css/styles.css").toExternalForm());
 
+
+
+
             primaryStage.setScene(scene);
             primaryStage.setTitle(title);
             primaryStage.show();
