@@ -19,7 +19,7 @@ public class FishermenWeatherApp extends Application {
 //        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/anchor-icon.png")));
 
         // Load the login scene first
-        SceneManager.switchScene("/fxml/login.fxml", "Fishermen Weather App - Login");
+        SceneManager.switchScene("/fxml/dashboard.fxml", "Fishermen Weather App - Login");
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
 //        Scene scene = new Scene(loader.load());
 //        primaryStage.setTitle("Fishermen Weather App - Login");
