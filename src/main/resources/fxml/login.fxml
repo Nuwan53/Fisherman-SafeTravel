@@ -9,13 +9,15 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderPane" stylesheets="@../styles/globals.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fishermen.weatherapp.controller.LoginController">
+<BorderPane fx:id="borderPane" minHeight="498.0" minWidth="1114.0" stylesheets="@../styles/globals.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fishermen.weatherapp.controller.LoginController">
    <center>
-      <VBox alignment="CENTER" maxWidth="400.0" spacing="20.0" styleClass="login-container">
+      <VBox alignment="CENTER" maxWidth="100.0" prefHeight="502.0" prefWidth="368.0" spacing="20.0" styleClass="login-container">
          <padding>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </padding>
@@ -56,4 +58,11 @@
          <Label fx:id="statusLabel" styleClass="status-label" visible="false" />
       </VBox>
    </center>
+   <top>
+      <Pane prefWidth="1112.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane />
+         </children>
+      </Pane>
+   </top>
 </BorderPane>
